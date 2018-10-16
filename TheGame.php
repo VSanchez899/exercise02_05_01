@@ -12,6 +12,7 @@
         <p style=text-align='center'>
         Username: <input type="text" name="Uname" required><br>
         password: <input type="text" name="pass" required><br>
+        Screen Name: <input type="text" name="Sname" required><br>
         Your full name: <input type="text" name="name" required><br>
         Your Email: <input type="text" name="email" required><br>
         Your Age : <input type="select" name="age" min="13" max="85" required>Must Be 13 or above<br>
@@ -27,6 +28,7 @@
                      $gameString = stripslashes($_POST['Uname']) . "\n";
                      $gameString .= stripslashes($_POST['pass']) . "\n";
                      $gameString .= stripslashes($_POST['name']) . "\n";
+                     $gameString .= stripslashes($_POST['Sname']) . "\n";
                      $gameString .= stripslashes($_POST['email']) . "\n";
                      $gameString .= stripslashes($_POST['age']) . "\n";
                      $gameString .= stripslashes($_POST['comment']) . "\n";
