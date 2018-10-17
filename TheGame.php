@@ -24,25 +24,24 @@
          $dir = "./TheGamers.txt";
          if (is_dir($dir)) {
              if (isset($_POST['submit'])) {
-                 
-                     $gameString = stripslashes($_POST['Uname']) . "\n";
-                     $gameString .= stripslashes($_POST['pass']) . "\n";
-                     $gameString .= stripslashes($_POST['name']) . "\n";
-                     $gameString .= stripslashes($_POST['Sname']) . "\n";
-                     $gameString .= stripslashes($_POST['email']) . "\n";
-                     $gameString .= stripslashes($_POST['age']) . "\n";
-                     $gameString .= stripslashes($_POST['comment']) . "\n";
-                     echo "\$gameSting: $gameString<br>";
+                 //this takes the information from the form and writes it into a text file that was chosen
+                     $gameString = stripslashes($_POST['Uname']) . " Username" . "\n";
+                     $gameString .= stripslashes($_POST['pass']) . " Password" . "\n";
+                     $gameString .= stripslashes($_POST['name']) . " Full name" . "\n";
+                     $gameString .= stripslashes($_POST['Sname']) ." Screenname" . "\n";
+                     $gameString .= stripslashes($_POST['email']) . " Email" . "\n";
+                     $gameString .= stripslashes($_POST['age']) . " Age" . "\n";
+                     $gameString .= stripslashes($_POST['comment']) . " Comment" . "\n";
                      $saveFileName = "$dir/TheGame.txt";
-                     echo "\$saveFileName: $saveFileName<br>";
                      if (file_put_contents($saveFileName, $gameString) > 0) {
-                         echo "Name \"" . htmlentities($saveFileName) . "\"successfully saved<br>\n";
+                         echo "<p>Info was successfully saved<br><p>\n";
                      } else {
                          echo "There was an error writing \"" . htmlentities($saveFileName) . "\".<br>\n";
                      }
                     }
         }else {
              mkdir($dir);
+             //this changes the mode of the server to allow certain permissions like writing or creating a file on a server
              chmod($dir, 0757);
         }
          

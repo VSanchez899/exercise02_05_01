@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--
+    Author: Vincent Sanchez
+    Date: 10.17.18
+    File name: ViewFile2.php
+-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visitior Feedback</title>
@@ -15,6 +20,7 @@
                     echo "<h2 style='color: red;'>Unkown Visitor</h2><br>\n";
                 }
                 else{
+                    //this writes a file that pulls all of the information from the form
                     $saveString = stripcslashes($_POST['name']). "\n";
                     $saveString .= stripcslashes($_POST['email']). "\n";
                     $saveString .= date('r') . "\n";

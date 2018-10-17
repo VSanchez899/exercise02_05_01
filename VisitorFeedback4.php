@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--
+    Author: Vincent Sanchez
+    Date: 10.17.18
+    File name: ViewFile2.php
+-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visitior Feedback</title>
@@ -8,6 +13,7 @@
 <body>
 <h2>Visitor Feedback 3</h2>
     <?php
+    //this uses a alternative way to get files and read them using fgets
         $dir = "./comments";
         if(is_dir($dir)){
             $commentFiles = scandir($dir);

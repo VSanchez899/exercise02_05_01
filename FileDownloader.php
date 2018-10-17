@@ -3,6 +3,7 @@
     if (isset($_GET['fileName'])) {
         $fileToGet = $dir . "/" . stripslashes($_GET['fileName']);
         if (is_readable($fileToGet)) {
+            //this creates a table that allows you to download certain files using file headers
             header("Content-Description: File transfer");
             header("Content-Type: application/force-download");
             header("Content-Dispostition: attachment; filename=\"". $_GET[fileName] . "\"");
@@ -24,11 +25,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--
+    Author: Vincent Sanchez
+    Date: 10.17.18
+    File name: ViewFile2.php
+-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Download error</title>
 </head>
 <body>
+
 
     
     <p>There was a error downloading <?php echo htmlentities($_GET['fileName']);?> </p>
