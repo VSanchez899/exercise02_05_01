@@ -18,8 +18,10 @@
         Your Age : <input type="select" name="age" min="13" max="85" required>Must Be 13 or above<br>
         <textarea name="comment" cols="100" rows="6"></textarea><br>
         <input type="submit" name="submit" value="Submit Your Comment"><br>
+        
         </p>
         </form>
+        <h3 style="color: white; text-align: center; border: 2px solid red; background-color: black;">Leaderboard</h3>
     <?php
          $dir = "./TheGamers.txt";
          if (is_dir($dir)) {
@@ -33,8 +35,10 @@
                      $gameString .= stripslashes($_POST['age']) . " Age" . "\n";
                      $gameString .= stripslashes($_POST['comment']) . " Comment" . "\n";
                      $saveFileName = "$dir/TheGame.txt";
+                     $Sname = $_POST['Sname'];
                      if (file_put_contents($saveFileName, $gameString) > 0) {
                          echo "<p>Info was successfully saved<br><p>\n";
+                         echo "<p>$Sname";
                      } else {
                          echo "There was an error writing \"" . htmlentities($saveFileName) . "\".<br>\n";
                      }
