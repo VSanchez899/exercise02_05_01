@@ -28,7 +28,7 @@
              if (isset($_POST['submit'])) {
                  //this takes the information from the form and writes it into a text file that was chosen
                      $gameString = stripslashes($_POST['Uname']) . " Username" . "\n";
-                     $gameString .= stripslashes($_POST['pass']) . " Password" . "\n";
+                     $gameString .= md5(stripslashes($_POST['pass'])) . " Password" . "\n";
                      $gameString .= stripslashes($_POST['name']) . " Full name" . "\n";
                      $gameString .= stripslashes($_POST['Sname']) ." Screenname" . "\n";
                      $gameString .= stripslashes($_POST['email']) . " Email" . "\n";
